@@ -15,6 +15,7 @@ export const MainContainer = styled(Flex)`
   max-width:1500px;
   flex-direction:${props=>props.column?"column":"row"};
   justify-content:${props=>props.justi};
+  align-self:center;
   @media only screen and (max-width:600px) {  
       flex-direction:column;
       min-height:105vh;

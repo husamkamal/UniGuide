@@ -1,4 +1,4 @@
-import { Para,  Box, ButtonLink } from "../Home/style";
+import {   Box, ButtonLink } from "../Home/style";
 import { Title,MainContainer ,BoxSection,Img } from "../../Global.style";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -16,9 +16,6 @@ const CountreyInformation = () => {
     const fetchD = async () => {
       const fetchData = await fetch(`https://restcountries.com/v3.1/name/${params.id}`);
       const response = await fetchData.json();
-      const cuntryArr = response.map((item) => {
-          return item;
-        });
     console.log(response )
         setCountryName(response);
     };
@@ -28,9 +25,6 @@ useEffect(() => {
     const fetchD = async () => {
         const fetchData = await fetch(`https://api.codetabs.com/v1/proxy/?quest=https://imsea.herokuapp.com/api/1?q=${params.id}`);
         const response = await fetchData.json();
-        //   const cuntryArr = response.map((item) => {
-            //     return item;
-            //   });
             setImageSrc(response);
             setLoading(false);
     };
@@ -40,7 +34,7 @@ useEffect(() => {
   return (
   loading?"":
         <MainContainer justi={"space-around"}>
-      <Imag src={imageSrc.results[9]} alt={imageSrc.image_name} />
+      <Imag src={imageSrc.results[2]} alt={imageSrc.image_name} />
 
       <BoxSection column width={"40%"}  height={"90%"}  >
         <Box width="100%" height="80%"  direction={"column"} style={{alignItems:"flex-start"}}>
